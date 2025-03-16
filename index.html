@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href=" https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.min.css " rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Sistema de Ponto Flutuante</title>
+</head>
+<body style="height: 100vh;" class="bg-slate-200" translate="no">
+    <header class="flex items-center justify-center p-2">
+        <h1 class="text-4xl text-center font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl p-6">Conversor de Sistema de Ponto Flutuante</h1>
+    </header>
+    <main class="flex flex-col items-center justify-center" style="height: 50%;">
+        <div class="text-center font-bold">
+            Escolha a base: <br>
+            <select id="base" class="border rounded-lg py-2 w-90 text-center font-mono">
+                <option value="10">Base 10</option>
+            </select>
+        </div>
+        <div class="text-center font-bold">
+            Insira o valor da mantissa: <br>
+            <input type="number" id="mantissa" class="text-center border w-90 rounded-lg py-1 font-mono">
+        </div>
+        <div class="text-center font-bold">
+            Insira o menor expoente: <br>
+            <input type="text" id="expoenteMin" class="text-center border w-90 rounded-lg py-1 font-mono">
+        </div>
+        <div class="text-center font-bold">
+            Insira o maior expoente: <br>
+            <input type="text" id="expoenteMax" class="text-center border w-90 rounded-lg py-1 font-mono">
+        </div>
+        <div class="text-center font-bold">
+            Insira o valor a ser convertido: <br>
+            <input type="text" id="numero" class="text-center border w-90 rounded-lg py-1 font-mono">
+        </div>
+        <div class="text-center mt-7">
+            <button class="button" onclick="sistemaPontoFlutuante()">
+                <span>Converter</span>
+            </button>
+        </div>
+    </main>
+    <section class="flex flex-col items-center h-14 text-lg">
+        <p id="sistema" class=""></p>
+        <p id="resultado"></p>
+        <p id="caseError" class="text-red-700"></p>
+    </section>
+    <script src="./script.js"></script>
+</body>
+</html>
