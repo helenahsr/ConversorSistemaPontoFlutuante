@@ -1,4 +1,4 @@
-# ConversorSistemaPontoFlutuante
+# Conversor de Sistema de Pontos Flutuantes
 Um Conversor de Sistema de Ponto Flutuante onde o objetivo é converter um número decimal em um sistema no estilo F(B, t, m, M).
 
 Onde F(B, t, m, M) representa:
