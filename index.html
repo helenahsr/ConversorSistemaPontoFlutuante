@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href=" https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.min.css " rel="stylesheet">
+    <link rel="shortcut icon" href="./img/calculadora.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <title>Sistema de Ponto Flutuante</title>
 </head>
@@ -35,10 +36,11 @@
             Insira o valor a ser convertido: <br>
             <input type="text" id="numero" class="text-center border w-90 rounded-lg py-1 font-mono">
         </div>
-        <div class="text-center mt-7">
+        <div class="text-center mt-7 flex flex-col">
             <button class="button" onclick="sistemaPontoFlutuante()">
                 <span>Converter</span>
             </button>
+            <span class="text-blue-500 underline cursor-pointer" onclick="redefinirCampos()">Redefinir</span>
         </div>
     </main>
     <section class="flex flex-col items-center h-14 text-lg">

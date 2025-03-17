@@ -36,7 +36,7 @@ function convertToFloatingPointSystem(B, T, M, L, number) {
             }
         }
         console.log(`Expoente: ${-expoente}`);
-        numeroNormalizado = (number * Math.pow(10, expoente).toString());
+        numeroNormalizado = (number * Math.pow(B, expoente).toString());
         expoente = -expoente;
         console.log(`Número normalizado: ${numeroNormalizado}`);
         numeroNormalizado = numeroNormalizado.toString();
@@ -46,7 +46,7 @@ function convertToFloatingPointSystem(B, T, M, L, number) {
     } else {
         expoente = numerosPreVirgula.toString().length;
         console.log(`Expoente: ${expoente}`);
-        numeroNormalizado = (number * Math.pow(10, -expoente).toString());
+        numeroNormalizado = (number * Math.pow(B, -expoente).toString());
         console.log(`Número normalizado: ${numeroNormalizado}`);
         numeroNormalizado = numeroNormalizado.toString();
         lengthNumeroNormalizado = numeroNormalizado.substring(2, numeroNormalizado.length);
@@ -108,15 +108,31 @@ function convertToFloatingPointSystem(B, T, M, L, number) {
 
 }
 
-// convertToFloatingPointSystem(10, 4, -3, 3, -85.097);
-
 function sistemaPontoFlutuante() {
-    let B = parseFloat(document.getElementById('base').value);
-    let T = parseFloat(document.getElementById('mantissa').value);
-    let M = parseFloat(document.getElementById('expoenteMin').value);
-    let L = parseFloat(document.getElementById('expoenteMax').value);
-    let inputValue = document.getElementById('numero').value;
-    let number = parseFloat(inputValue.replace(",", "."));
+    
 
-    convertToFloatingPointSystem(B, T, M, L, number);
+    if(document.getElementById('numero').value == '' || document.getElementById('base').value == '' || document.getElementById('mantissa').value == '' || document.getElementById('expoenteMin').value == '' || document.getElementById('expoenteMax').value == '') {
+        alert('Preencha todos os campos!');
+        return;
+    } else {
+        let B = parseFloat(document.getElementById('base').value);
+        let T = parseFloat(document.getElementById('mantissa').value);
+        let M = parseFloat(document.getElementById('expoenteMin').value);
+        let L = parseFloat(document.getElementById('expoenteMax').value);
+
+        let inputValue = document.getElementById('numero').value;
+        let number = parseFloat(inputValue.replace(",", "."));
+        convertToFloatingPointSystem(B, T, M, L, number);
+    }
+}
+
+function redefinirCampos() {
+    document.getElementById('numero').value = '';
+    document.getElementById('base').value = '';
+    document.getElementById('mantissa').value = '';
+    document.getElementById('expoenteMin').value = '';
+    document.getElementById('expoenteMax').value = '';
+    document.getElementById('sistema').innerHTML = '';
+    document.getElementById('caseError').innerHTML = '';
+    document.getElementById('resultado').innerHTML = '';
 }
