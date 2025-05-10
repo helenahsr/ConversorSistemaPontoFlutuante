@@ -4,7 +4,7 @@ function convertToFloatingPointSystem(B, T, M, L, number) {
     let lengthNumeroNormalizado = '';
 
     if (number == 0) {
-        console.log('pelo amor né?');
+        alert('Zero não é um número válido');
         return;
     }
 
